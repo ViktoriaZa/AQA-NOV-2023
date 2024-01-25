@@ -3,21 +3,28 @@ package org.prog;
 public class Car implements ITurnable {
 
     public String color = null;
-    public String engineVolume;
+//    public String engineVolume;
 
-    public void drive() {
-        System.out.println("Driving car");
-        switchGear();
-    }
+//    public void drive() {
+//        System.out.println("Driving car");
+//    }
+//    private void switchGear() {
+//    }
 
     //TODO: call this method when there is not color set, and intercept exception that occurs
     //TODO: in same block in finally set car color to some value
     public void printColorlength() {
-        System.out.println(color.length());
+        try {
+            System.out.println(color.length());
+        } catch (RuntimeException e) {
+            System.out.println("Ups, помилка. Колір машини відсутній!");
+        } finally {
+            color = "Червоний";
+            System.out.println("Колір машини: " + color.length()+" simbols");
+        }
     }
-
     private void switchGear() {
-        System.out.println("Switching gear");
+       System.out.println("Switching gear");
     }
 
     @Override
@@ -48,3 +55,4 @@ public class Car implements ITurnable {
                 " passing through " + passingThrough + " with " + withCargo + " cargo");
     }
 }
+
