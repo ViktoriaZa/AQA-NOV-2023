@@ -23,7 +23,7 @@ public class SeleniumDemo {
             driver.manage().window().maximize();
             driver.get("https://google.com/");
 
-            WebElement cookiesLink = driver.findElement(By.partialLinkText("cookie"));
+ /*           WebElement cookiesLink = driver.findElement(By.partialLinkText("cookie"));
             String cookiesUrl = cookiesLink.getAttribute("href");
 
             if (cookiesLink.isDisplayed()) {
@@ -32,7 +32,7 @@ public class SeleniumDemo {
                         By.xpath("//a[contains(text(),'cookie')]/../../../..//button"));
                 cookieFormButtons.get(3).click();
             }
-
+*/
             WebElement searchInput = driver.findElement(By.name("q"));
             searchInput.sendKeys("Ben Affleck");
             searchInput.sendKeys(Keys.ENTER);
